@@ -1,8 +1,21 @@
 # Dockerbash
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/dockerbash`. To experiment with that code, run `bin/console` for an interactive prompt.
+A script to make it easier to execute a bash into running Docker containers.
 
-TODO: Delete this and the text above, and describe your gem
+Sometimes when you are running docker containers, you need to inspect the status of services, files, configurations, this gem provides the ability to log into running containers using a GNU Bourne-Shell and debug the container from another shell
+
+## Requirements
+
+This command line tool has been developed and tested on Gnu/Linux environments, it won't run on Darwin (Mac OS X) systems.
+
+In order to run dockerbash, you must set and use properly the DOCKER_OPTS value on your system
+
+```
+$ vim /etc/default/docker
+DOCKER_OPTS='-H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock'
+
+$ service docker restart
+```
 
 ## Installation
 
@@ -21,9 +34,29 @@ Or install it yourself as:
     $ gem install dockerbash
 
 ## Usage
+How to run it:
 
-TODO: Write usage instructions here
+```  
+$ dockerbash
+```  
 
+Example menu:
+
+```
+     _            _             _               _
+  __| | ___   ___| | _____ _ __| |__   __ _ ___| |___
+ / _` |/ _ \ / __| |/ / _ \  __|  _ \ / _` / __|  _  \
+| (_| | (_) | (__|   <  __/ |  | |_) | (_| \__ \ | | |
+ \__,_|\___/ \___|_|\_\___|_|  |_.__/ \__,_|___/_| |_|
+ 
+                                             by m8051.
+                                             
+0. Container: docker_nginx_1	 IP: 172.17.0.3	 Started At: 2016-04-25 - 21:26:55.461611217Z
+1. Container: docker_php7-fpm_1	 IP: 172.17.0.2	 Started At: 2016-04-25 - 21:26:54.784825954Z
+Container?  0
+
+root@2d7083aa1744:/
+```                                          
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -38,4 +71,5 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
 
