@@ -1,14 +1,14 @@
 # Dockerbash
 
-A script to make it easier to execute a bash into running Docker containers.
+A very basic command line rubygem that makes easier to execute a bash into running Docker containers.
 
-Sometimes when you are running docker containers, you need to inspect the status of services, files, configurations, this gem provides the ability to log into running containers using a GNU Bourne-Shell and debug the container from another shell
+Sometimes when you are running docker containers, you need to inspect the status of services, files, configurations, this gem provides the ability to log into running containers using a GNU Bourne-Shell and debug the container from another shell.
 
 ## Requirements
 
-This command line tool has been developed and tested on Gnu/Linux environments, it won't run on Darwin (Mac OS X) systems.
+This command line tool has been developed and tested on Gnu/Linux environments, it won't run on Darwin (OS X) systems.
 
-In order to run dockerbash, you must set and use properly the DOCKER_OPTS value on your system
+In order to run dockerbash, you must install the package ruby-dev (Header files for compiling extension modules for Ruby) and set properly the DOCKER_OPTS value.
 
 ```
 $ vim /etc/default/docker
@@ -18,17 +18,6 @@ $ service docker restart
 ```
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'dockerbash'
-```
-
-And then execute:
-
-    $ bundle
-
 Or install it yourself as:
 
     $ gem install dockerbash
