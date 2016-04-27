@@ -7,9 +7,12 @@ require "open3"
 require "json"
 require "mkmf"
 
-module MakeMakefile::Logging
-  @logfile = File::NULL
-  @quiet = true
+# Preventing mkmf to:
+#  => litter with log files.
+#  => non-verbose stdout
+module Logging
+   @logfile = File::NULL
+   @quiet = true
 end
 
 module Dockerbash
