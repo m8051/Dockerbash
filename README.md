@@ -8,8 +8,17 @@ Sometimes when you are running docker containers, you need to inspect the status
 
 This command line tool has been developed and tested on Gnu/Linux environments, it won't run on Darwin (OS X) systems.
 
-In order to run dockerbash, you must install the package ruby-dev (Header files for compiling extension modules for Ruby) and set properly the DOCKER_OPTS value.
+In order to run dockerbash, you must install the package that contains the header files for compiling extension modules for Ruby and set properly the DOCKER_OPTS value.
 
+Based on DEB
+```
+$ sudo apt-get install build-essential ruby-dev
+```
+Based on RPM
+```
+$ sudo yum install -y gcc ruby-devel libxml2 libxml2-devel libxslt libxslt-devel
+```
+DOCKER_OPTS
 ```
 $ vim /etc/default/docker
 DOCKER_OPTS='-H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock'
@@ -18,7 +27,7 @@ $ service docker restart
 ```
 
 ## Installation
-Or install it yourself as:
+Install the gem yourself:
 
     $ gem install dockerbash
 
@@ -60,5 +69,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
-
