@@ -8,7 +8,7 @@ Sometimes when you are running docker containers, you need to inspect the status
 
 This command line tool has been developed and tested on Gnu/Linux environments, it won't run on Darwin (OS X) systems.
 
-In order to run dockerbash, you must install the package that contains the header files for compiling extension modules for Ruby and set properly the DOCKER_OPTS value.
+In order to run dockerbash, you must install the package that contains the header files for compiling extension modules for Ruby.
 
 Based on DEB
 ```
@@ -16,24 +16,17 @@ $ sudo apt-get install build-essential ruby-dev
 ```
 Based on RPM
 ```
-$ sudo yum install -y gcc ruby-devel libxml2 libxml2-devel libxslt libxslt-devel
-```
-DOCKER_OPTS
-```
-$ vim /etc/default/docker
-DOCKER_OPTS='-H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock'
-
-$ service docker restart
+$ sudo yum install -y gcc gcc-g++ ruby-devel libxml2 libxml2-devel libxslt libxslt-devel
 ```
 
 ## Installation
 Install the gem yourself:
-
-    $ gem install dockerbash
+```
+$ gem install dockerbash
+```
 
 ## Usage
 How to run it:
-
 ```  
 $ dockerbash
 ```  
@@ -41,19 +34,18 @@ $ dockerbash
 Example menu:
 
 ```
-     _            _             _               _
-  __| | ___   ___| | _____ _ __| |__   __ _ ___| |___
- / _` |/ _ \ / __| |/ / _ \  __|  _ \ / _` / __|  _  \
-| (_| | (_) | (__|   <  __/ |  | |_) | (_| \__ \ | | |
- \__,_|\___/ \___|_|\_\___|_|  |_.__/ \__,_|___/_| |_|
- 
-                                             by m8051.
-                                             
-0. Container: docker_nginx_1	 IP: 172.17.0.3	 Started At: 2016-04-25 - 21:26:55.461611217Z
-1. Container: docker_php7-fpm_1	 IP: 172.17.0.2	 Started At: 2016-04-25 - 21:26:54.784825954Z
-Container?  0
+       _            _             _               _       
+    __| | ___   ___| | _____ _ __| |__   __ _ ___| |___   
+   / _` |/ _ \ / __| |/ / _ \  __|  _ \ / _` / __|  _  |  
+  | (_| | (_) | (__|   <  __/ |  | |_) | (_| \__ \ | | |  
+   \____|\___/ \___|_|\_\___|_|  |____/ \____|___/_| |_|  
+                                                          
+                                     v.0.1.0  - by m8051  
 
-root@2d7083aa1744:/
+0. Container:docker_nginx_1 	 Ip:172.17.0.3 	 Ports: 80/tcp -> 8080  
+1. Container:docker_php7-fpm_1 	 Ip:172.17.0.2 	 Ports: 9000/tcp -> 9001  
+Container?  0
+root@2d7083aa1744:/#
 ```                                          
 ## Development
 
@@ -69,3 +61,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
