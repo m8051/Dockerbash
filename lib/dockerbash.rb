@@ -39,7 +39,7 @@ module Dockerbash
         container_bindings = cb_stdout.gsub(/\n/,' ')
 
         container_ids = i
-        puts "#{counter}. Container:#{container_name}\t Ip:#{container_ip}\t Ports:#{container_bindings}"
+        puts "#{counter}. Container:#{container_name}\tIp:#{container_ip}\tPorts:#{container_bindings}"
         docker_ids << container_ids
         counter += 1
       end
