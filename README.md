@@ -16,7 +16,7 @@ $ sudo apt-get install build-essential ruby-dev
 ```
 Based on RPM
 ```
-$ sudo yum install -y gcc gcc-g++ ruby-devel libxml2 libxml2-devel libxslt libxslt-devel
+$ sudo yum install -y gcc gcc-c++ ruby-devel libxml2 libxml2-devel libxslt libxslt-devel
 ```
 
 ## Installation
