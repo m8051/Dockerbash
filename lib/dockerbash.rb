@@ -28,15 +28,15 @@ module Dockerbash
       ids = get_docker_containers_ids()
       ids.each do |i|
         cn_stdout, cn_stderr, cn_status = Open3.capture3("#{@docker_path} inspect --format={{.Name}} #{i}")
-        container_name = cn_stdout.gsub(/\n/,' ')
+        container_name = cn_stdout.gsub(/\n/,'')
         container_name.delete!("/")
 
         ci_stdout, ci_stderr, ci_status = Open3.capture3("#{@docker_path} inspect --format={{.NetworkSettings.IPAddress}} #{i}")
-        container_ip = ci_stdout.gsub(/\n/,' ')
+        container_ip = ci_stdout.gsub(/\n/,'')
         container_ip.delete("/")
 
         cb_stdout, cb_stderr, cb_status = Open3.capture3("#{@docker_path} inspect --format='{{range $p, $conf := .NetworkSettings.Ports}} {{$p}} -> {{(index $conf 0).HostPort}} {{end}}' #{i}")
-        container_bindings = cb_stdout.gsub(/\n/,' ')
+        container_bindings = cb_stdout.gsub(/\n/,'')
 
         container_ids = i
         puts "#{counter}. Container:#{container_name}\tIp:#{container_ip}\tPorts:#{container_bindings}"
